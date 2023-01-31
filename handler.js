@@ -7,6 +7,7 @@ const getAdvice = async event => {
     const { adviceId } = event.pathParameters;
     const advice = advices.find(advice => adviceId == advice.id);
     if (!advice) {
+      console.log(`ADVICE NOT FOUND: advice ID${adviceId}`)
       return {
         statusCode: 404,
         body: createResponse({ message: 'The ID seems invalid' }),
